@@ -1,0 +1,46 @@
+&nbsp;
+<div class="topcoat-navigation-bar topFixedBar">
+    <div class="topcoat-navigation-bar__item left quarter">
+        <a class="icn prevIcn" href="#">&nbsp;&nbsp;&nbsp;</a>
+    </div>
+    <div class="topcoat-navigation-bar__item center half">
+        <h4>{{helpers.getCountryName(country.n)}}</h4>
+    </div>
+</div>
+
+<div class="firstContent">
+    <div class="topcoat-tab-bar centAlign" style="margin:auto; padding-top: 10px;">
+        <select id="ddlState" ng-options="state.id as state.n for state in country.states" ng-model="selectedStateId" ng-change="redirectToState()">
+        </select>
+    </div>
+    
+    <div class="marg10">
+        <label class="topcoat-radio-button">
+            <input type="radio" name="topcoat" checked="checked">
+                <div class="topcoat-radio-button__checkmark"></div>
+                Member Firms
+                </label>
+        &nbsp;&nbsp;
+        <label class="topcoat-radio-button" ng-click="helpers.g('/countryWithStateContacts/' + country.id + '/' + selectedStateId)">
+            <input type="radio" name="topcoat">
+                <div class="topcoat-radio-button__checkmark"></div>
+                Contacts
+                </label>
+    </div>
+    
+    <input type="search" ng-model="search" class="topcoat-search-input--large" placeholder="Type text to filter the content">
+        
+        <div ng-repeat="town in towns | filter:search | filter:{sid: state.id}:true | orderBy:'n'" class="topcoat-list">
+            <h2 class="topcoat-list__header town">{{town.n}}</h2>
+            <ul id="town{{town.id}}" class="topcoat-list__container list firmList">
+                <li ng-click="helpers.f(firm.id)" class="topcoat-list__item" ng-repeat="firm in firms | filter:search | filter:{tid: town.id}:true | orderBy:'n'">
+                    <div>{{firm.n}}</div>
+                    <span class="lstSpan">{{firm.l}}</span>
+                    <span class="chevron">&nbsp;&nbsp;&nbsp;</span>
+                </li>
+            </ul>
+        </div>
+        
+</div>
+
+<div class="bottomSpace">&nbsp;</div>

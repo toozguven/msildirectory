@@ -1,0 +1,49 @@
+&nbsp;
+<div class="topcoat-navigation-bar topFixedBar">
+    <div class="topcoat-navigation-bar__item left quarter">
+        <span class="icn prevIcn" onclick="javascript:history.go(-1)">&nbsp;&nbsp;&nbsp;</span>
+    </div>
+    <div class="topcoat-navigation-bar__item center half">
+        <h5 style="margin-left: -20px">Regional Executive Offices</h5>
+    </div>
+</div>
+
+<div class="firstContent"></div>
+
+<div ng-repeat="firm in reos" class="topcoat-list">
+    <h3 class="topcoat-list__header pad10 town" ng-click="toggleFirm(firm.id);">
+        {{firm.sn}}
+        <i class="fa fa-angle-double-down fright" ng-show="!isVisible(firm.id)" style="color: #555"></i>
+        <i class="fa fa-angle-double-up fright" ng-show="isVisible(firm.id)" style="color: #555"></i>
+    </h3>
+    
+    <div id="firm{{firm.id}}" ng-show="isVisible(firm.id)">
+        <div class="pad1_25rem" style="color: #ccc">
+            <div style="font-weight: bold; color:#fff">{{firm.n}}</div><br />
+            <span ng-bind-html="firm.ad">{{firm.ad}}</span>
+            <br /><br />
+            <a href="tel:{{firm.t}}" ng-show="helpers.hasValueFunc(firm.t)">
+                <div>Telephone: {{firm.t}}</div>
+            </a>
+            
+            <div ng-show="helpers.hasValueFunc(firm.f)">
+                <div>Facsimile: {{firm.f}}</div>
+            </div>
+            
+            <a href="{{helpers.getUrl(firm.u)}}" ng-show="helpers.hasValueFunc(firm.u)">
+                <div>Website: {{firm.u}}</div>
+            </a>
+        </div>
+        
+        <h5 class="topcoat-list__header town2">Contacts</h5>
+        <ul class="topcoat-list__container list firmList">
+            <li ng-click="helpers.c(member.id)" class="topcoat-list__item" ng-repeat="member in firm.members">
+                <div>{{member.n}}</div>
+                <span class="lstSpan">{{member.r}}</span>
+                <span class="lstSpan">{{member.eml}}</span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="bottomSpace"></div>
