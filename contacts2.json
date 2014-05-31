@@ -1,7 +1,0 @@
-﻿{
-  "lastUpdated": 1,
-  "contacts": [
-    { "contactId": 0, "fullName": "Ozgur Ozguven", "lastName": "Ozguven", "role": "IT Boy" },
-    { "contactId": 1, "fullName": "Basar Ozguven", "lastName": "Can", "role": "IT Guy" }
-  ]
-}
