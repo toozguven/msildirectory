@@ -1,9 +1,0 @@
-﻿{
-  "lastUpdated": 1,
-  "firms": [
-    { "firmId": 315, "ilContactId": 82, "ilName": "Chris Rawden", "eml": "jens.poll@moorestephens.de", "tel": "+447968618332", "name": "Moore Stephens Europe Limited", "town": "Brussels", "state": "", "country": "Belgium", "locationInfo": "Brussels, Belgium" },
-    { "firmId": 293, "ilContactId": 396, "ilName": "Sarah Skeels-Smith", "eml": "sarah.skeels-smith@moorestephens.com", "tel": "+442073349191", "name": "Moore Stephens International Limited", "town": "London", "state": "", "country": "United Kingdom", "locationInfo": "London, United Kingdom" },
-    { "firmId": 251, "ilContactId": 252, "ilName": "Richard Moore", "eml": "richard.moore@moorestephens.com", "tel": "+442073349191", "name": "Moore Stephens LLP", "town": "London", "state": "London City", "country": "United Kingdom", "locationInfo": "London, United Kingdom" },
-    { "firmId": 289, "ilContactId": 360, "ilName": "Andy Armanino", "eml": "andy.armanino@amllp.com", "tel": "+19257902636", "name": "Armanino LLP", "town": "San Ramon", "state": "California", "country": "United States of America", "locationInfo": "California, United States of America" }
-  ]
-}
