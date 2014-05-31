@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.moorestephens.dir" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>MSIL Directory</name>
+    <description>
+        Directory of firms and contacts
+    </description>
+    <author email="ozgur.ozguven@moorestephens.com" href="http://www.moorestephens.com">
+        Moore Stephens International Limited
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <icon src="img/logo/logo.jpg" />
+    <preference name="SplashScreen" value="screen" />
+    <preference name="SplashScreenDelay" value="4000" /> 
+</widget>
