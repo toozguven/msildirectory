@@ -165,9 +165,9 @@
 .topcoat-button--large--cta,
 .topcoat-button-bar__button,
 .topcoat-button-bar__button--large {
-  padding: 0 1.25rem;
+  padding: 0 0.75rem;
   font-size: 16px;
-  line-height: 3rem;
+  line-height: 2rem;
   letter-spacing: 1px;
   color: #c6c8c8;
   text-shadow: 0 -1px rgba(0,0,0,0.69);
@@ -197,7 +197,7 @@
 .topcoat-button--large--cta:focus,
 .topcoat-button-bar__button:focus,
 .topcoat-button-bar__button--large:focus {
-  border: 1px solid #0036ff;
+  border: 1px solid #50C8E8;
   box-shadow: inset 0 1px rgba(255,255,255,0.36), 0 0 0 2px #6fb5f1;
   outline: 0;
 }
@@ -254,7 +254,7 @@
 .topcoat-button--cta,
 .topcoat-button--large--cta {
   border: 1px solid #134f7f;
-  background-color: #288edf;
+  background-color: #50C8E8;
   box-shadow: inset 0 1px rgba(255,255,255,0.36);
   color: #fff;
   font-weight: 500;
@@ -263,12 +263,12 @@
 
 .topcoat-button--cta:hover,
 .topcoat-button--large--cta:hover {
-  background-color: #4ca1e4;
+  background-color: #50C8E8;
 }
 
 .topcoat-button--cta:active,
 .topcoat-button--large--cta:active {
-  background-color: #1e7dc8;
+  background-color: #50C8E8;
   box-shadow: inset 0 1px rgba(0,0,0,0.12);
 }
 
@@ -589,9 +589,9 @@
 .topcoat-button--large--quiet,
 .topcoat-button--cta,
 .topcoat-button--large--cta {
-  padding: 0 1.25rem;
+  padding: 0 0.75rem;
   font-size: 16px;
-  line-height: 3rem;
+  line-height: 2rem;
   letter-spacing: 1px;
   color: #c6c8c8;
   text-shadow: 0 -1px rgba(0,0,0,0.69);

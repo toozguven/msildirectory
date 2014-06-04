@@ -72,6 +72,10 @@ body {
     }
 }
 
+.app {
+  --background: #fff !important;
+}
+
 h1 {
     font-size:24px;
     font-weight:normal;
@@ -79,6 +83,11 @@ h1 {
     overflow:visible;
     padding:0px;
     text-align:center;
+}
+
+p {
+  color:#ddd;
+  font-size: 0.9rem;
 }
 
 .event {
@@ -174,6 +183,15 @@ h1 {
   height: 24px;
 }
 
+.urlIcn {
+  background: url('images/view.svg') no-repeat scroll 0% 0% / cover  transparent;
+  position: absolute;
+  right: 10px;
+  margin-top: -35px;
+  width: 24px;
+  height: 24px;
+}
+
 .prevIcn {
   background: url('images/back.svg') no-repeat scroll 0% 0% / cover  transparent;
   position: absolute;
@@ -184,7 +202,7 @@ h1 {
 /*#endregion*/
 
 a, h1, h2, h3, h4,h5 {color: #fff; text-decoration:none; margin: 0}
-.fright {float: right}
+.fright {float: right !important;}
 .list > li img {
     width: 55px;
     height: 45px;
@@ -202,6 +220,16 @@ a, h1, h2, h3, h4,h5 {color: #fff; text-decoration:none; margin: 0}
   position: absolute;
   right: 10px;
   margin-top: -15px;
+  width: 24px;
+  height: 24px;
+}
+
+.chevron2
+{
+  background: url('images/next_blue.svg') no-repeat scroll 0% 0% / cover  transparent;
+  position: absolute;
+  right: 10px;
+  
   width: 24px;
   height: 24px;
 }
@@ -263,7 +291,7 @@ a, h1, h2, h3, h4,h5 {color: #fff; text-decoration:none; margin: 0}
   margin-top: 5px;
 }
 
-.fRight {float: right}
+.fRight {float: right !important;}
 
 .firstContent {
   margin-top: 50px !important;
@@ -417,9 +445,12 @@ select {
 .details span {
   color: #bbb;
 }
-
+.topcoat-list__item div {
+  color: #eee;
+}
 .topcoat-list__item span {
   color: #bbb;
   font-size: 14px;
 }
 /*#endregion*/
+

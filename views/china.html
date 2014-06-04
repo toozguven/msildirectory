@@ -1,0 +1,42 @@
+&nbsp;
+<div class="topcoat-navigation-bar topFixedBar">
+  <div class="topcoat-navigation-bar__item left quarter">
+    <a class="icn prevIcn" href="#">&nbsp;&nbsp;&nbsp;</a>
+  </div>
+  <div class="topcoat-navigation-bar__item center half">
+    <h4>{{helpers.getCountryName(country.n)}}</h4>
+  </div>
+</div>
+
+<div class="firstContent">
+  <div class="pad10">
+    <label class="topcoat-radio-button">
+      <input type="radio" name="topcoat" checked="checked">
+      <div class="topcoat-radio-button__checkmark"></div>
+      Member Firms
+    </label>
+    &nbsp;&nbsp;
+    <label class="topcoat-radio-button" ng-click="helpers.g('/chinaContacts/' + country.id)">
+      <input type="radio" name="topcoat">
+      <div class="topcoat-radio-button__checkmark"></div>
+      Contacts
+    </label>
+  </div>
+
+  <input type="search" ng-model="search" class="topcoat-search-input--large" placeholder="Type text to filter the list">
+
+  <div ng-repeat="town in towns | filter:search | orderBy:'n'" class="topcoat-list">
+    <h2 class="topcoat-list__header town">{{town.n}}</h2>
+    <ul class="topcoat-list__container list firmList">
+      <li ng-click="helpers.f(firm.id)" class="topcoat-list__item" ng-repeat="firm in firms | filter:search | filter:{tid: town.id}:true | orderBy:'id!=763'">
+        <div ng-bind-html="firm.n"></div>
+        <span class="lstSpan">{{firm.l}}</span>
+        <span class="chevron">&nbsp;&nbsp;&nbsp;</span>
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="bottomSpace"></div>
+

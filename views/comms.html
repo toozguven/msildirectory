@@ -1,35 +1,35 @@
 &nbsp;
 <div class="topcoat-navigation-bar topFixedBar">
-    <div class="topcoat-navigation-bar__item left quarter">
-        <span class="icn prevIcn" onclick="javascript:history.go(-1)">&nbsp;&nbsp;&nbsp;</span>
-    </div>
-    <div class="topcoat-navigation-bar__item center half">
-        <h4>Committees</h4>
-    </div>
+  <div class="topcoat-navigation-bar__item left quarter">
+    <span class="icn prevIcn" onclick="javascript:history.go(-1)">&nbsp;&nbsp;&nbsp;</span>
+  </div>
+  <div class="topcoat-navigation-bar__item center half">
+    <h4>Committees</h4>
+  </div>
 </div>
 
 <div class="firstContent"></div>
 
 <div ng-repeat="comm in comms" class="topcoat-list">
-    <h5 class="topcoat-list__header pad10 town" ng-click="toggleComm(comm.id);">
-        <i class="fa fa-angle-double-down fright" ng-show="!isVisible(comm.id)" style="color: #777"></i>
-        <i class="fa fa-angle-double-up fright" ng-show="isVisible(comm.id)" style="color: #777"></i>
-        {{comm.n}}
-        <br />
-        {{comm.n2}} &nbsp;
-        
-    </h5>
+  <h5 class="topcoat-list__header pad10 town" ng-click="toggleComm(comm.id);">
+    <i class="fa fa-angle-double-down fright" ng-show="!isVisible(comm.id)" style="color: #777"></i>
+    <i class="fa fa-angle-double-up fright" ng-show="isVisible(comm.id)" style="color: #777"></i>
+    {{comm.n}}
+    <br />
+    {{comm.n2}} &nbsp;
     
-    <div id="comm{{comm.id}}" ng-show="isVisible(comm.id)">
-        
-        <ul class="list firmList">
-            <li ng-click="helpers.c(member.id)" class="topcoat-list__item" ng-repeat="member in comm.members">
-                <div>{{member.n}} <span ng-show="helpers.hasValueFunc(member.r)">- <em>{{member.r}}</em></span></div>
-                <span ng-show="helpers.hasValueFunc(member.l)" class="lstSpan">{{member.l}}</span>
-                <span class="lstSpan">{{member.eml}}</span>
-            </li>
-        </ul>
-    </div>
+  </h5>
+
+  <div id="comm{{comm.id}}" ng-show="isVisible(comm.id)">
+    
+      <ul class="list firmList">
+        <li ng-click="helpers.c(member.id)" class="topcoat-list__item" ng-repeat="member in comm.members">
+          <div>{{member.n}} <span ng-show="helpers.hasValueFunc(member.r)">- <em>{{member.r}}</em></span></div>
+          <span ng-show="helpers.hasValueFunc(member.l)" class="lstSpan">{{member.l}}</span>
+          <span class="lstSpan">{{member.eml}}</span>
+        </li>
+      </ul>
+  </div>
 </div>
 
 <div class="bottomSpace"></div>

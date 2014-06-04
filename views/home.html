@@ -1,23 +1,36 @@
-&nbsp;
-<div>
-    <div class=" pad10 centAlign" style="margin:auto">
-        <img src="img/logo/fullLogo.png" style="width: 200px; margin:auto; "/>
-    </div>
-    
-    <div class="pad10 centAlign" ng-hide="finishedLoadingCountries">
-        <h4>LOADING DATA</h4>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-    </div>
-    
-    <div class="pad10 centAlign" ng-show="finishedLoadingCountries">
-        <br />
-        <h4>To find a firm or a contact, please select a country below</h4>
-        <br />
-        <select id="ddlCountry" ng-options="country.id as country.n for country in countries" ng-model="selectedCountryId" ng-change="redirectToCountry()">
-            <option value="">- Pick a country -</option>
-        </select>
-        
-    </div>
+﻿<div style="background: #fff; margin-top:0" > 
+  <div class=" pad10 centAlign" style="margin:auto">
+    <img ng-show="helpers.isOnline()" src="img/logo/fullLogo.png" style="width: 200px; height: 60px; margin:auto; "/>
+  </div>
+</div>
+
+<div class="pad10 centAlign" ng-hide="finishedLoadingCountries">
+  <h4>LOADING DATA</h4>
+  <br />
+  <i class="fa fa-circle-o-notch fa-spin"></i>
+</div>
+  
+<div ng-show="finishedLoadingCountries">
+  <ul class="topcoat-list__container list contactList">
+    <li class="topcoat-list__item">
+      <div>To find a firm or a contact, please select a country below</div>
+      <br /><br />
+      <select id="ddlCountry" ng-options="country.id as country.n for country in countries" ng-model="selectedCountryId" ng-change="redirectToCountry()">
+        <option value="">- Pick a country -</option>
+      </select>
+    </li>
+
+    <li class="topcoat-list__item">
+      <input style="width: 92%" type="search" ng-model="search" class="topcoat-search-input--large" placeholder="Or just search...">
+      <div class="centAlign">
+        <button style="width: 125px" class="topcoat-button--cta" ng-click="gotoFirmSearch(search)">Find Firm</button> 
+         
+        <button class="topcoat-button--cta" ng-click="gotoContactSearch(search)" >Find Contact</button>
+      </div>
+    </li>
+
+  </ul>
+
     
 </div>
 
