@@ -14,14 +14,17 @@
   <ul class="topcoat-list__container list contactList">
     <li class="topcoat-list__item">
       <div>To find a firm or a contact, please select a country below</div>
-      <br /><br />
-      <select id="ddlCountry" ng-options="country.id as country.n for country in countries" ng-model="selectedCountryId" ng-change="redirectToCountry()">
-        <option value="">- Pick a country -</option>
-      </select>
+      <br />
+      <div>
+        <select id="ddlCountry" ng-options="country.id as country.n for country in countries" ng-model="selectedCountryId" ng-change="redirectToCountry()">
+          <option value="">- Pick a country -</option>
+        </select>
+      </div>
     </li>
 
     <li class="topcoat-list__item">
-      <input style="width: 92%" type="search" ng-model="search" class="topcoat-search-input--large" placeholder="Or just search...">
+      <a name="searchBox"></a>
+      <input style="width: 92%" type="search" ng-model="search" class="topcoat-search-input--large" placeholder="Or just search..." onfocus="window.scrollTo(0, 200)">
       <div class="centAlign">
         <button style="width: 125px" class="topcoat-button--cta" ng-click="gotoFirmSearch(search)">Find Firm</button> 
          

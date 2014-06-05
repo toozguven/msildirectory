@@ -60,9 +60,9 @@
     </li>
 
      <li class="topcoat-list__item">
-      <a href="#" onclick="openContactProfile(); return false;">
-        <div>Profile / Bio</div>
-        <span class="lstSpan">View this person's profile page on MSIL Intranet</span>
+      <a href="javascript:void(0)" ng-click="helpers.openWebPage('hdnContactProfileUrl', true, true);">
+        <div>More Information</div>
+        <span class="lstSpan">View more information about this person on www.moorestephens.com</span>
         <span class="icn headIcn">&nbsp;&nbsp;&nbsp;</span>
         <input type="hidden" id="hdnContactProfileUrl" ng-value="helpers.getContactProfileUrl(contact.id)" />
       </a>

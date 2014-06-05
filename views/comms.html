@@ -1,14 +1,18 @@
 &nbsp;
 <div class="topcoat-navigation-bar topFixedBar">
   <div class="topcoat-navigation-bar__item left quarter">
-    <span class="icn prevIcn" onclick="javascript:history.go(-1)">&nbsp;&nbsp;&nbsp;</span>
+    <a class="icn prevIcn" href="#">&nbsp;&nbsp;&nbsp;</a>
   </div>
   <div class="topcoat-navigation-bar__item center half">
     <h4>Committees</h4>
   </div>
 </div>
 
-<div class="firstContent"></div>
+<div class="firstContent">
+  <p class="pad10">
+    Tap on a committee below to view its members. 
+  </p>
+</div>
 
 <div ng-repeat="comm in comms" class="topcoat-list">
   <h5 class="topcoat-list__header pad10 town" ng-click="toggleComm(comm.id);">
@@ -27,6 +31,7 @@
           <div>{{member.n}} <span ng-show="helpers.hasValueFunc(member.r)">- <em>{{member.r}}</em></span></div>
           <span ng-show="helpers.hasValueFunc(member.l)" class="lstSpan">{{member.l}}</span>
           <span class="lstSpan">{{member.eml}}</span>
+          <span class="icn chevron">&nbsp;&nbsp;&nbsp;</span> 
         </li>
       </ul>
   </div>

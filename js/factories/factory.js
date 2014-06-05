@@ -2,6 +2,7 @@
 {
   ngRootScope = $rootScope;
   ngRootScope.isOnline = -1;
+  ngRootScope.isPhone = false;
   ngRootScope.utc_offset = 0;
   ngRootScope.dst_offset = 0;
   ngRootScope.lat = 0;
@@ -46,6 +47,10 @@
       {
         return ngRootScope.isOnline != 0;
       },
+      isPhone: function ()
+      {
+        return ngRootScope.isPhone;
+      },
       showLoading: true,
       getCountryName: function ( cname )
       {
@@ -63,6 +68,16 @@
         }
 
         return "";
+      },
+      openWebPage: function (hiddenFieldId, isNewWindow, isShowLocation)
+      {
+        var url = document.getElementById( hiddenFieldId ).value;
+        window.open( url, isNewWindow ? '_blank' : '_self', isShowLocation ? 'location=yes' : 'location=no' );
+
+      },
+      openWebPage2: function ( url, isNewWindow, isShowLocation )
+      {
+        window.open( url, isNewWindow ? '_blank' : '_self', isShowLocation ? 'location=yes' : 'location=no' );
       }
     };
     return rtnVal;

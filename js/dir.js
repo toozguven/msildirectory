@@ -37,11 +37,11 @@ var ngapp = angular.module( 'dir', ['ngRoute', 'ngAnimate', 'ngSanitize'] )
   } )
   .when( '/findFirms/:phrase', {
     controller: 'FindFirmsCtrl',
-    templateUrl: 'views/findFirms.html'
+    templateUrl: 'views/firmsSearch.html'
   } )
   .when( '/findContacts/:phrase', {
     controller: 'FindContactsCtrl',
-    templateUrl: 'views/findContacts.html'
+    templateUrl: 'views/contactsSearch.html'
   } )
   .when( '/country/:id', {
     controller: 'CountryCtrl',

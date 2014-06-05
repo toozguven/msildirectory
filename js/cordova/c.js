@@ -26,6 +26,8 @@ var app = {
   {
     console_log( 'onDeviceReady' );
 
+    ngRootScope.isPhone = device.name.indexOf("iPad") == -1;
+
     //override alert method
     if ( navigator.notification )
     {
@@ -49,7 +51,7 @@ var app = {
     }
     catch ( e ) { }
 
-    setTimeout( "checkLocation();", 1 );
+    //setTimeout( "checkLocation();", 1 );
     setTimeout( "checkConnection();", 1 );
     //setTimeout( "checkDatePattern();", 1 );
   },
@@ -150,35 +152,7 @@ function checkLocation()
 }
 
 
-function openMap()
-{
-  var url = document.getElementById( "hdnMapUrl" ).value;
-  window.open( url, '_blank', 'location=yes' );
-}
 
-function openDirections()
-{
-  var url = document.getElementById( "hdnDirectionsUrl" ).value;
-  window.open( url, '_blank', 'location=yes' );
-}
-
-function openFirmProfile()
-{
-  var url = document.getElementById( "hdnFirmProfileUrl" ).value;
-  window.open( url, '_blank', 'location=yes' );
-}
-
-function openFirmWebsite()
-{
-  var url = document.getElementById( "hdnFirmWebUrl" ).value;
-  window.open( url, '_blank', 'location=yes' );
-}
-
-function openContactProfile()
-{
-  var url = document.getElementById( "hdnContactProfileUrl" ).value;
-  window.open( url, '_blank', 'location=yes' );
-}
 
 function getDateOfWeekAgoAsInt()
 {

@@ -6,19 +6,19 @@
 
   dataMgr.setScopeComms( function ( data ) { $scope.comms = data; } );
 
-  $scope.currentComm = 0;
+  $scope.currentlyOpenComms = "{0}";
 
   $scope.toggleComm = function ( cid )
   {
-    if ( $scope.currentComm == cid )
-      $scope.currentComm = 0;
+    if ( $scope.currentlyOpenComms.indexOf( "{" + cid + "}" ) > -1 )
+      $scope.currentlyOpenComms = $scope.currentlyOpenComms.replace( "{" + cid + "}", "" );
     else
-      $scope.currentComm = cid;
+      $scope.currentlyOpenComms = $scope.currentlyOpenComms + "{" + cid + "}";
   }
 
   $scope.isVisible = function ( cid )
   {
-    return $scope.currentComm == cid;
+    return $scope.currentlyOpenComms.indexOf( "{" + cid + "}" ) > -1;
   }
 
   $anchorScroll();

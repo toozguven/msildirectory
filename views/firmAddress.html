@@ -13,14 +13,13 @@
   <div class="subHeader firstContent">
     <h3 ng-bind-html="firm.n"></h3>
     <h4>{{firm.l}}</h4>
+    <br />
   </div>
 
   <ul class="topcoat-list__container list">
 
     <li class="topcoat-list__item" ng-show="helpers.hasValueFunc(firm.ad)">
-      <a href="#/fa/{{firm.id}}">
-        <p ng-bind-html="firm.ad"></p>     
-      </a>
+      <p ng-bind-html="firm.ad"></p>     
     </li>
 
     <li class="topcoat-list__item" ng-show="helpers.hasValueFunc(firm.mad)">
@@ -31,10 +30,8 @@
     </li>
 
     <li class="topcoat-list__item" ng-show="helpers.hasValueFunc(firm.f)">
-      <a href="tel:{{firm.t}}">
-        <div>Facsimile</div>
-        <p>{{firm.f}}</p>      
-      </a>
+      <div>Facsimile</div>
+      <p>{{firm.f}}</p>      
     </li>
 
   </ul>

@@ -1,0 +1,34 @@
+&nbsp;
+<div class="topcoat-navigation-bar topFixedBar">
+  <div class="topcoat-navigation-bar__item left quarter">
+    <a class="icn prevIcn" href="#">&nbsp;&nbsp;&nbsp;</a>
+  </div>
+  <div class="topcoat-navigation-bar__item center half">
+    <h4>Search Results</h4>
+  </div>
+</div>
+
+<div class="firstContent">
+
+  <input type="search" ng-model="search" class="topcoat-search-input--large" placeholder="Type text to filter results">
+
+  <ul class="topcoat-list__container list firmList" ng-show="(firms|filter:search).length > 0 && (firms|filter:search).length < 101">
+    <li ng-click="helpers.f(firm.id)" class="topcoat-list__item" ng-repeat="firm in firms | filter:(search) | orderBy:'n'">
+      <div ng-bind-html="firm.n"></div>
+      <span>{{firm.l}}</span>
+      <span class="chevron2">&nbsp;&nbsp;&nbsp;</span>
+    </li>
+  </ul>
+
+  <p ng-show="!((firms|filter:search).length > 0)" class="pad10">
+    No result found mathing the search criteria.
+  </p>
+
+  <p ng-show="((firms|filter:search).length > 100)" class="pad10">
+    Search phrase <strong><em>{{search}}</em></strong> matches too many items. Please be more specific.
+  </p>
+
+</div>
+
+<div class="bottomSpace"></div>
+

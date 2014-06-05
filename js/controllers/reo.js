@@ -6,19 +6,19 @@
   
   dataMgr.setScopeREOs( function ( data ) { $scope.reos = data; } );
 
-  $scope.currentFirm = 0;
+  $scope.currentlyOpenFirms = "{0}";
 
   $scope.toggleFirm = function (fid)
   {
-    if ( $scope.currentFirm == fid )
-      $scope.currentFirm = 0;
+    if ( $scope.currentlyOpenFirms.indexOf( "{" + fid + "}" ) > -1 )
+      $scope.currentlyOpenFirms = $scope.currentlyOpenFirms.replace( "{" + fid + "}", "" );
     else
-      $scope.currentFirm = fid;
+      $scope.currentlyOpenFirms = $scope.currentlyOpenFirms + "{" + fid + "}";
   }
 
   $scope.isVisible = function ( fid )
   {
-    return $scope.currentFirm == fid;
+    return $scope.currentlyOpenFirms.indexOf( "{" + fid + "}" ) > -1;
   }
 
   $anchorScroll();

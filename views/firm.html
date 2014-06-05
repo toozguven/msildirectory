@@ -59,7 +59,7 @@
     </li>
 
     <li class="topcoat-list__item" ng-show="helpers.isOnline() && helpers.hasValueFunc(firm.u)">
-      <a href="#" onclick="openFirmWebsite(); return false;">
+      <a href="javascript:void(0)" ng-click="helpers.openWebPage('hdnFirmWebUrl', true, true);">
         <div>Website</div>
         <span class="lstItmDesc lstSpan">Visit this firm's public website</span>
         <span class="icn urlIcn">&nbsp;&nbsp;&nbsp;</span>
@@ -68,7 +68,7 @@
     </li>
         
     <li class="topcoat-list__item" ng-show="helpers.hasValueFunc(firm.lat)">
-      <a href="#" onclick="openMap(); return false;">
+      <a href="javascript:void(0)" ng-click="helpers.openWebPage('hdnMapUrl', true, true);">
         <div>Map</div>
         <span class="lstItmDesc lstSpan">View location on map</span>
         <span class="icn locationIcn">&nbsp;&nbsp;&nbsp;</span>
@@ -77,7 +77,7 @@
     </li>
     
     <li class="topcoat-list__item" ng-show="helpers.isOnline()">
-      <a href="#" onclick="openFirmProfile(); return false;">
+      <a href="javascript:void(0)" ng-click="helpers.openWebPage('hdnFirmProfileUrl', true, true);">
         <div>More Information</div>
         <span class="lstItmDesc lstSpan">View more information about this firm on www.moorestephens.com</span>
         <span class="icn urlIcn">&nbsp;&nbsp;&nbsp;</span>

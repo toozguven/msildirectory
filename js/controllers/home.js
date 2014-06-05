@@ -43,13 +43,37 @@
 
   $scope.gotoContactSearch = function ( phrase )
   {
-    $location.path( "/findContacts/" + phrase );
+    if ( phrase )
+    {
+      if ( phrase.length <= 2 )
+        alert( "Search term must be at least 3 characters." );
+      else
+        $location.path( "/findContacts/" + phrase );
+    }
+    else
+      alert( "Please enter a search phrase." );
   }
 
   $scope.gotoFirmSearch = function ( phrase )
   {
-    $location.path( "/findFirms/" + phrase );
+    if ( phrase )
+    {
+      if ( phrase.length <= 2 )
+        alert("Search term must be at least 3 characters.");
+      else
+        $location.path( "/findFirms/" + phrase );
+    }
+    else
+      alert( "Please enter a search phrase." );
+  }
+
+  $scope.scrollToSearch = function ()
+  {
+    $location.hash( "searchBox" );
+    $anchorScroll();
   }
 
   $scope.helpers.showLoading = !( $scope.finishedLoading );
+
+  $anchorScroll();
 } );
