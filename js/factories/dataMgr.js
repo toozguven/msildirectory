@@ -28,11 +28,11 @@ ngapp.factory( "dataMgr", function ($http)
     CONTACTS_API_URL = "https://cdn.moorestephens.org/InternationalDirectory/json/contacts.json";
   }
 
-  localStorage.removeItem( REO_LOCAL_STORAGE_KEY );
-  localStorage.removeItem( COMMS_LOCAL_STORAGE_KEY );
-  localStorage.removeItem( COUNTRIES_LOCAL_STORAGE_KEY );
-  localStorage.removeItem( FIRMS_LOCAL_STORAGE_KEY );
-  localStorage.removeItem( CONTACTS_LOCAL_STORAGE_KEY );
+  //localStorage.removeItem( REO_LOCAL_STORAGE_KEY );
+  //localStorage.removeItem( COMMS_LOCAL_STORAGE_KEY );
+  //localStorage.removeItem( COUNTRIES_LOCAL_STORAGE_KEY );
+  //localStorage.removeItem( FIRMS_LOCAL_STORAGE_KEY );
+  //localStorage.removeItem( CONTACTS_LOCAL_STORAGE_KEY );
 
   var factory = {};
 
