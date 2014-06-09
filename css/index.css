@@ -109,6 +109,13 @@ p {
 /*#region MStph*/
 
 /*#region Icons*/
+.prevIcnDiv {
+  height: 100%;
+  width: 50%;
+}
+.h100pc {
+  height: 100%;
+}
 .loading {
   text-align:center;
   position: absolute;
