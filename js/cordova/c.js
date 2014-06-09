@@ -25,6 +25,11 @@ var app = {
   onDeviceReady: function ()
   {
     console_log( 'onDeviceReady' );
+    
+    if ( parseFloat( window.device.version ) === 7.0 )
+    {
+      document.body.style.marginTop = "20px";
+    }
 
     if ( parseFloat( window.device.version ) === 7.0 )
     {
