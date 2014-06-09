@@ -25,7 +25,7 @@ var app = {
   onDeviceReady: function ()
   {
     console_log( 'onDeviceReady' );
-    
+    window.alert( window.device.version );
     if ( parseFloat( window.device.version ) === 7.0 )
     {
       document.body.style.marginTop = "20px";
@@ -51,7 +51,9 @@ var app = {
                                      );
       };
     }
-
+    
+    window.alert( window.device.version );
+    
     //app.receivedEvent( 'deviceready' );
 
     //init fastclick (avoids )
