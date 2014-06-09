@@ -4,7 +4,10 @@
   
   $scope.reos = []; //set as empty array
   
-  dataMgr.setScopeREOs( function ( data ) { $scope.reos = data; } );
+  dataMgr.setScopeREOs( function ( data ) { 
+    $scope.reos = data; 
+    $scope.helpers.showLoading = false;
+  } );
 
   $scope.currentlyOpenFirms = "{0}";
 

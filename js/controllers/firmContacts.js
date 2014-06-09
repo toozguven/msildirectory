@@ -1,4 +1,4 @@
-﻿ngapp.controller( 'FirmContactsCtrl', function ( $scope, factory, dataMgr, $routeParams, $anchorScroll, $location )
+﻿ngapp.controller( 'FirmContactsCtrl', function ( $scope, factory, dataMgr, $routeParams, $anchorScroll, $location, $timeout )
 {
   $scope.helpers = factory.getHelpers();
 
@@ -13,6 +13,8 @@
     {
       $scope.contacts = dataMgr.getMainContactsForFirm( data, $scope.firm );
       $scope.internationalContacts = dataMgr.getInternationalContactsForFirm( data, $scope.firm );
+
+      $scope.helpers.showLoading = false;
     } );
 
   } );

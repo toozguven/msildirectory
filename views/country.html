@@ -8,6 +8,8 @@
   </div>
 </div>
 
+<div class="loading" ng-hide="!(helpers.showLoading)"><i class="fa fa-circle-o-notch fa-spin"></i></div>
+
 <div class="firstContent">
   <div class="pad10">
     <label class="topcoat-radio-button">
@@ -25,12 +27,11 @@
 
   <input type="search" ng-model="search" class="topcoat-search-input--large" placeholder="Type text to filter the list">
 
-  <div ng-repeat="town in towns | filter:search | orderBy:'n'" class="topcoat-list">
+  <div ng-repeat="town in towns | filter:searchDelayed | orderBy:'n'" class="topcoat-list">
     <h2 class="topcoat-list__header town">{{town.n}}</h2>
     <ul class="topcoat-list__container list firmList">
-      <li ng-click="helpers.f(firm.id)" class="topcoat-list__item" ng-repeat="firm in firms | filter:search | filter:{tid: town.id}:true | orderBy:'n'">
+      <li ng-click="helpers.f(firm.id)" class="topcoat-list__item chevronLi" ng-repeat="firm in firms | filter:searchDelayed | filter:{tid: town.id}:true | orderBy:'n'">
         <div ng-bind-html="firm.n"></div>
-        <span class="chevron2">&nbsp;&nbsp;&nbsp;</span>
       </li>
     </ul>
   </div>

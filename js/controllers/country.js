@@ -1,9 +1,11 @@
-﻿ngapp.controller( 'CountryCtrl', function ( $scope, factory, dataMgr, $routeParams, $anchorScroll, $location )
+﻿ngapp.controller( 'CountryCtrl', function ( $scope, factory, dataMgr, $routeParams, $anchorScroll, $location, $timeout )
 {
   $scope.helpers = factory.getHelpers();
   
   $scope.countryId = parseInt( $routeParams.id );
 
+  $scope.searchDelayed = "";
+  $scope.helpers.delayModelSetting( $scope, $timeout, "search", function ( val ) { $scope.searchDelayed = val; } );
 
   dataMgr.setScopeCountries( function ( data )
   {
@@ -22,18 +24,18 @@
     dataMgr.setScopeFirms( function ( data )
     {
       $scope.firms = data;
+
+      $scope.helpers.showLoading = false;
     } );
 
   } );
-  
-    
+   
   
   $scope.redirectToState = function ()
   {
+    $scope.helpers.showLoading = true;
     $location.path( "/countryWithState/" + $scope.countryId + "/" + $scope.selectedStateId );
   }
-
-  $scope.helpers.showLoading = false;
 
   $anchorScroll();
 } );

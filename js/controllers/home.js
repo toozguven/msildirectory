@@ -15,17 +15,15 @@
   {
     $scope.countries = data;
     $scope.finishedLoadingCountries = true;
+
+    $scope.helpers.showLoading = false;
   } );
 
 
-
+  //async load other data
   setTimeout( "globalDataMgr.setScopeFirms( function ( data ) { } );", 1 );
-
-
   setTimeout( "globalDataMgr.setScopeContacts( function ( data ) { } );", 11 );
-
   setTimeout( "globalDataMgr.setScopeComms( function ( data ) { } );", 22 );
-
   setTimeout( "globalDataMgr.setScopeREOs( function ( data ) { } );", 33 );
 
   
@@ -33,6 +31,8 @@
 
   $scope.redirectToCountry = function ()
   {
+    $scope.helpers.showLoading = true;
+
     if ( $scope.selectedCountryId == "210" )
       $location.path( "/countryWithState/" + $scope.selectedCountryId + "/0" );
     else if ( $scope.selectedCountryId == "43" )
@@ -48,7 +48,9 @@
       if ( phrase.length <= 2 )
         alert( "Search term must be at least 3 characters." );
       else
+      {
         $location.path( "/findContacts/" + phrase );
+      }
     }
     else
       alert( "Please enter a search phrase." );
@@ -59,9 +61,12 @@
     if ( phrase )
     {
       if ( phrase.length <= 2 )
-        alert("Search term must be at least 3 characters.");
+        alert( "Search term must be at least 3 characters." );
       else
+      {
+        $scope.helpers.showLoading = true;
         $location.path( "/findFirms/" + phrase );
+      }
     }
     else
       alert( "Please enter a search phrase." );
@@ -72,8 +77,6 @@
     $location.hash( "searchBox" );
     $anchorScroll();
   }
-
-  $scope.helpers.showLoading = !( $scope.finishedLoading );
-
+  
   $anchorScroll();
 } );

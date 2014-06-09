@@ -26,7 +26,7 @@ var app = {
   {
     console_log( 'onDeviceReady' );
 
-    ngRootScope.isPhone = device.name.indexOf("iPad") == -1;
+    //ngRootScope.isPhone = device.name.indexOf("iPad") == -1;
 
     //override alert method
     if ( navigator.notification )

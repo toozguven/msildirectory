@@ -8,25 +8,27 @@
   </div>
 </div>
 
+<div class="loading" ng-hide="!(helpers.showLoading)"><i class="fa fa-circle-o-notch fa-spin"></i></div>
+
 <div class="firstContent">
 
   <input type="search" ng-model="search" class="topcoat-search-input--large" placeholder="Type text to filter results">
 
-  <ul class="topcoat-list__container list firmList" ng-show="(contacts|filter:search).length > 0 && (contacts|filter:search).length < 101">
-    <li ng-click="helpers.c(contact.id)" class="topcoat-list__item" ng-repeat="contact in contacts | filter:search | orderBy:'ln'">
+  <ul class="topcoat-list__container list firmList" ng-show="(contacts|filter:searchDelayed).length > 0 && (contacts|filter:searchDelayed).length < 101">
+    <li ng-click="helpers.c(contact.id)" class="topcoat-list__item chevronLi" ng-repeat="contact in contacts | filter:searchDelayed | orderBy:'ln'">
       <div ng-bind-html="contact.n"></div>
-      <span>{{contact.f}}</span>
+      <span ng-show="helpers.hasValue(contact.r)">{{contact.r}}<br /></span>
+      <span ng-bind-html="contact.f"></span>
       <span>{{contact.l}}</span>
-      <span class="chevron2">&nbsp;&nbsp;&nbsp;</span>
     </li>
   </ul>
 
-  <p ng-show="(contacts|filter:search).length == 0" class="pad10">
+  <p ng-show="(contacts|filter:searchDelayed).length == 0" class="pad10">
     No result found mathing the search criteria.
   </p>
 
-  <p ng-show="((contacts|filter:search).length > 100)" class="pad10">
-    Search phrase <strong><em>{{search}}</em></strong> matches too many items. Please be more specific.
+  <p ng-show="((contacts|filter:searchDelayed).length > 100)" class="pad10">
+    Search phrase <strong><em>{{searchDelayed}}</em></strong> matches too many items. Please be more specific.
   </p>
 
 </div>

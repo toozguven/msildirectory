@@ -8,6 +8,8 @@
   </div>
 </div>
 
+<div class="loading" ng-hide="!(helpers.showLoading)"><i class="fa fa-circle-o-notch fa-spin"></i></div>
+
 <div class="firstContent">
   <p class="pad10">
     Tap on a region below to view the details of the regional executive office and its contacts. 
@@ -61,7 +63,7 @@
 
     <h5 class="topcoat-list__header town2">CONTACTS</h5>
     <ul class="topcoat-list__container list firmList">
-      <li ng-click="helpers.c(member.id)" class="topcoat-list__item" ng-repeat="member in firm.members">
+      <li ng-click="helpers.c(member.id)" class="topcoat-list__item chevronLi" ng-repeat="member in firm.members">
         <div>{{member.n}}</div>
         <span class="lstSpan">{{member.r}}</span>
         <span class="lstSpan">{{member.eml}}</span>

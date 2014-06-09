@@ -19,6 +19,15 @@
   var CONTACTS_API_URL = "https://s3-eu-west-1.amazonaws.com/msil-international-directory/contacts.json";
   var CONTACTS_LOCAL_STORAGE_KEY = "mstphDirContacts";
 
+  if ( document.location.href.indexOf( "cdn.moorestephens.org" ) > -1 )
+  {
+    REO_API_URL = "https://cdn.moorestephens.org/InternationalDirectory/api/reos";
+    COMMS_API_URL = "https://cdn.moorestephens.org/InternationalDirectory/api/committees";
+    COUNTRIES_API_URL = "https://cdn.moorestephens.org/InternationalDirectory/api/countries";
+    FIRMS_API_URL = "https://cdn.moorestephens.org/InternationalDirectory/api/firms";
+    CONTACTS_API_URL = "https://cdn.moorestephens.org/InternationalDirectory/api/contacts";
+  }
+
   //localStorage.removeItem( REO_LOCAL_STORAGE_KEY );
   //localStorage.removeItem( COMMS_LOCAL_STORAGE_KEY );
   //localStorage.removeItem( COUNTRIES_LOCAL_STORAGE_KEY );

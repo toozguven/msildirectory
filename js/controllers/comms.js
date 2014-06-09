@@ -4,7 +4,10 @@
 
   $scope.comms = []; //set as empty array
 
-  dataMgr.setScopeComms( function ( data ) { $scope.comms = data; } );
+  dataMgr.setScopeComms( function ( data ) { 
+    $scope.comms = data; 
+    $scope.helpers.showLoading = false;
+  } );
 
   $scope.currentlyOpenComms = "{0}";
 

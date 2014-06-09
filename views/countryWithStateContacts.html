@@ -8,6 +8,8 @@
   </div>
 </div>
 
+<div class="loading" ng-hide="!(helpers.showLoading)"><i class="fa fa-circle-o-notch fa-spin"></i></div>
+
 <div class="firstContent">
   <div class="topcoat-tab-bar centAlign" style="margin:auto; padding-top: 10px;">
     <select id="ddlState" ng-options="state.id as state.n for state in country.states" ng-model="selectedStateId" ng-change="redirectToState()">
@@ -31,11 +33,10 @@
   <input type="search" ng-model="search" class="topcoat-search-input--large" placeholder="Type text to filter the list">
 
   <ul class="topcoat-list__container list firmList">
-      <li ng-click="helpers.c(contact.id)" class="topcoat-list__item" ng-repeat="contact in contacts | filter:search | filter:{cid: country.id}:true | filter:{sid: state.id}:true | orderBy:'ln'">
+      <li ng-click="helpers.c(contact.id)" class="topcoat-list__item chevronLi" ng-repeat="contact in contacts | filter:searchDelayed | filter:{cid: country.id}:true | filter:{sid: state.id}:true | orderBy:'ln'">
         <div>{{contact.n}}</div>
         <div ng-show="helpers.hasValueFunc(contact.r)">{{contact.r}}<br /></div>
         <span class="lstSpan">{{contact.f}}, {{contact.l.replace(", " + country.n, "").replace(", " + state.n, "")}}</span>
-        <span class="chevron">&nbsp;&nbsp;&nbsp;</span>
       </li>
     </ul>
 

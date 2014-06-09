@@ -8,6 +8,8 @@
   </div>
 </div>
 
+<div class="loading" ng-hide="!(helpers.showLoading)"><i class="fa fa-circle-o-notch fa-spin"></i></div>
+
 <div class="firstContent">
 
   <div class="subHeader">
@@ -20,9 +22,8 @@
       <h2 class="topcoat-list__header town">Main Contacts</h2>
     </li>
 
-    <li ng-click="helpers.c(contact.id)" class="topcoat-list__item" ng-repeat="contact in internationalContacts">
+    <li ng-click="helpers.c(contact.id)" class="topcoat-list__item chevronLi" ng-repeat="contact in internationalContacts">
       <div>{{contact.n}}</div>
-      <span class="chevron2">&nbsp;&nbsp;&nbsp;</span>
       <span ng-show="helpers.hasValueFunc(contact.r)">{{contact.r}}<br /></span>
     </li>
 
@@ -34,11 +35,9 @@
       <h2 class="topcoat-list__header town">All Contacts</h2>
     </li>
 
-    <li ng-click="helpers.c(contact.id)" class="topcoat-list__item" ng-repeat="contact in contacts">
-      <div>{{contact.n}}</div>
-      <span class="chevron2">&nbsp;&nbsp;&nbsp;</span>
+    <li ng-click="helpers.c(contact.id)" class="topcoat-list__item chevronLi" ng-repeat="contact in contacts">
+      <div>{{contact.n}}</div>      
       <span ng-show="helpers.hasValueFunc(contact.r)">{{contact.r}}<br /></span>
-      <span class="lstSpan" ng-show="helpers.hasValueFunc(contact.l)"></span>
     </li>
   </ul>
 

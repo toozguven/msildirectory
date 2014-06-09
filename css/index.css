@@ -72,9 +72,6 @@ body {
     }
 }
 
-.app {
-  --background: #fff !important;
-}
 
 h1 {
     font-size:24px;
@@ -90,24 +87,6 @@ p {
   font-size: 0.9rem;
 }
 
-.event {
-    border-radius:4px;
-    -webkit-border-radius:4px;
-    color:#FFFFFF;
-    font-size:12px;
-    margin:0px 30px;
-    padding:2px 0px;
-}
-
-.event.listening {
-    background-color:#333333;
-    display:block;
-}
-
-.event.received {
-    background-color:#4B946A;
-    display:none;
-}
 
 @keyframes fade {
     from { opacity: 1.0; }
@@ -130,16 +109,22 @@ p {
 /*#region MStph*/
 
 /*#region Icons*/
-.homeIcn {
-  background: url('images/home.svg') no-repeat scroll 0% 0% / cover  transparent;
-  right: 10px;
-  margin-top: -35px;
-  width: 24px;
-  height: 24px;
+.loading {
+  text-align:center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin:0;
+  padding-top: 30px;
+  background-color: #555;
+  z-index: 444;
 }
 
 .phoneIcn {
-  background: url('images/call.svg') no-repeat scroll 0% 0% / cover  transparent;
+  background: url('img/call.svg') no-repeat scroll 0% 0% / cover  transparent;
   position: absolute;
   right: 10px;
   margin-top: -35px;
@@ -148,7 +133,7 @@ p {
 }
 
 .emailIcn {
-  background: url('images/email.svg') no-repeat scroll 0% 0% / cover  transparent;
+  background: url('img/email.svg') no-repeat scroll 0% 0% / cover  transparent;
   position: absolute;
   right: 10px;
   margin-top: -35px;
@@ -157,7 +142,7 @@ p {
 }
 
 .smsIcn {
-  background: url('images/chat.svg') no-repeat scroll 0% 0% / cover  transparent;
+  background: url('img/chat.svg') no-repeat scroll 0% 0% / cover  transparent;
   position: absolute;
   right: 10px;
   margin-top: -35px;
@@ -166,7 +151,7 @@ p {
 }
 
 .locationIcn {
-  background: url('images/location.svg') no-repeat scroll 0% 0% / cover  transparent;
+  background: url('img/location.svg') no-repeat scroll 0% 0% / cover  transparent;
   position: absolute;
   right: 10px;
   margin-top: -35px;
@@ -175,7 +160,7 @@ p {
 }
 
 .headIcn {
-  background: url('images/user.svg') no-repeat scroll 0% 0% / cover  transparent;
+  background: url('img/user.svg') no-repeat scroll 0% 0% / cover  transparent;
   position: absolute;
   right: 10px;
   margin-top: -35px;
@@ -184,7 +169,7 @@ p {
 }
 
 .urlIcn {
-  background: url('images/view.svg') no-repeat scroll 0% 0% / cover  transparent;
+  background: url('img/view.svg') no-repeat scroll 0% 0% / cover  transparent;
   position: absolute;
   right: 10px;
   margin-top: -35px;
@@ -193,7 +178,7 @@ p {
 }
 
 .prevIcn {
-  background: url('images/back.svg') no-repeat scroll 0% 0% / cover  transparent;
+  background: url('img/back.svg') no-repeat scroll 0% 0% / cover  transparent;
   position: absolute;
   margin-top: 26px !important;
   width: 24px;
@@ -214,6 +199,14 @@ a, h1, h2, h3, h4,h5 {color: #fff; text-decoration:none; margin: 0}
 {
   margin: 0;
 }
+.chevronLi
+{
+  background: url('img/chevron-right.svg') no-repeat scroll 0% 0% / cover  transparent;
+  background-position: right 5px center;
+  background-size: auto;
+  cursor: pointer;
+}
+/*
 .chevron
 {
   background: url('images/next_blue.svg') no-repeat scroll 0% 0% / cover  transparent;
@@ -233,15 +226,8 @@ a, h1, h2, h3, h4,h5 {color: #fff; text-decoration:none; margin: 0}
   width: 24px;
   height: 24px;
 }
+  */
 
-.plus {
-  background: url('images/plus.svg') no-repeat scroll 0% 0% / cover  transparent;
-  position: absolute;
-  left: 10px;
-  width: 24px;
-  height: 24px;
-  margin-right: 15px;
-}
 
 .topcoat-icon--back
 {
@@ -446,6 +432,9 @@ select {
 }
 .details span {
   color: #bbb;
+}
+.topcoat-list__item {
+  padding-right: 1.50rem !important;
 }
 .topcoat-list__item div {
   color: #eee;

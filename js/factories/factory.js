@@ -17,7 +17,7 @@
     var rtnVal = {
       hasValueFunc: function ( val )
       {
-        return ( val && val.length > 0 && val != "0");
+        return ( val && val.length > 2 && val != "0");
       },
       getContactImageUrl: function ( cid )
       {
@@ -78,6 +78,21 @@
       openWebPage2: function ( url, isNewWindow, isShowLocation )
       {
         window.open( url, isNewWindow ? '_blank' : '_self', isShowLocation ? 'location=yes' : 'location=no' );
+      },
+      delayModelSetting: function ( scope, timeout, modelToWatch, callback )
+      {
+        var tempDelayed = "", searchTimeoutFunc;
+        scope.$watch( modelToWatch, function ( val )
+        {
+          if ( searchTimeoutFunc )
+            timeout.cancel( searchTimeoutFunc );
+
+          tempDelayed = val;
+          searchTimeoutFunc = timeout( function ()
+          {
+            callback(tempDelayed);
+          }, 555 );
+        } );
       }
     };
     return rtnVal;

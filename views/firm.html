@@ -10,6 +10,8 @@
     </div>
   </div>
 
+  <div class="loading" ng-hide="!(helpers.showLoading)"><i class="fa fa-circle-o-notch fa-spin"></i></div>
+
   <div class="subHeader firstContent">
     <h3 ng-bind-html="firm.n"></h3>
     <h4>{{firm.l}}</h4>
@@ -18,27 +20,24 @@
 
   <ul class="topcoat-list__container list">
 
-    <li class="topcoat-list__item" ng-show="helpers.hasValueFunc(firm.ad)">
+    <li class="topcoat-list__item chevronLi" ng-show="helpers.hasValueFunc(firm.ad)">
       <a href="#/fa/{{firm.id}}">
         <div>Address Details</div>
-        <span class="lstItmDesc lstSpan">View address details for this firm</span>    
-        <span class="icn chevron">&nbsp;&nbsp;&nbsp;</span> 
+        <span class="lstItmDesc lstSpan">View address details for this firm</span>     
       </a>
     </li>
 
-    <li class="topcoat-list__item" ng-show="helpers.hasValueFunc(firm.il)">
+    <li class="topcoat-list__item chevronLi" ng-show="helpers.hasValueFunc(firm.il)">
       <a href="#/c/{{firm.ilid}}">
         <div>International Liaison</div>
         <span class="lstItmDesc lstSpan">{{firm.il}}</span>
-        <span class="icn chevron">&nbsp;&nbsp;&nbsp;</span>
       </a>
     </li>
 
-    <li class="topcoat-list__item">
+    <li class="topcoat-list__item chevronLi">
       <a href="#/fc/{{firm.id}}">
         <div>Main Contacts</div>
-        <span class="lstItmDesc lstSpan">View the list of partners</span>
-        <span class="icn chevron">&nbsp;&nbsp;&nbsp;</span>     
+        <span class="lstItmDesc lstSpan">View the list of partners</span>    
       </a>
     </li>
 

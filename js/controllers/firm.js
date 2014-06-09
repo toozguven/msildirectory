@@ -5,6 +5,8 @@
   dataMgr.setScopeFirms( function ( data )
   {
     $scope.firm = dataMgr.getFirm( data, $routeParams.id );
+
+    $scope.helpers.showLoading = false;
   } );
 
   $anchorScroll();

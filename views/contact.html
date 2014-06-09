@@ -8,6 +8,8 @@
   </div>
 </div>
 
+<div class="loading" ng-hide="!(helpers.showLoading)"><i class="fa fa-circle-o-notch fa-spin"></i></div>
+
 <div class="details">
   <div class="subHeader firstContent">
     <img class="fRight contactImg" ng-show="helpers.isOnline()" ng-src="https://api.moorestephens.org/i/msimage2.ashx?cid={{contact.id}}" />
@@ -51,11 +53,10 @@
       </a>
     </li>
 
-     <li class="topcoat-list__item">
+     <li class="topcoat-list__item chevronLi">
       <a href="#/f/{{contact.fid}}">
-        <div>{{contact.f}}</div>
+        <div ng-bind-html="contact.f"></div>
         <span class="lstSpan">View details of this person's firm</span>
-        <span class="icn chevron">&nbsp;&nbsp;&nbsp;</span>
       </a>
     </li>
 
