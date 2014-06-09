@@ -1,4 +1,4 @@
-﻿ngapp.factory( "dataMgr", function ($http)
+ngapp.factory( "dataMgr", function ($http)
 {
   /*constants*/
 
