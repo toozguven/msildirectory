@@ -93,7 +93,7 @@ function doIt()
 {
   try
   {
-    //alert( app.connType );
+    window.alert( window.device.version );
   }
   catch ( e )
   {
