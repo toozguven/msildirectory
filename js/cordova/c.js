@@ -83,10 +83,8 @@ app.initialize();
 
 function console_log( msg )
 {
-  var element = document.getElementById( 'con' );
-
-  element.innerHTML = element.innerHTML + " | " + msg;
-
+  //var element = document.getElementById( 'con' );
+  //element.innerHTML = element.innerHTML + " | " + msg;
 }
 
 function doIt()
