@@ -25,7 +25,7 @@ var app = {
   onDeviceReady: function ()
   {
     console_log( 'onDeviceReady' );
-    
+    window.alert( window.device.version );
     if ( parseFloat( window.device.version ) === 7.0 )
     {
       document.body.style.marginTop = "20px";
@@ -51,7 +51,9 @@ var app = {
                                      );
       };
     }
-
+    
+    window.alert( window.device.version );
+    
     //app.receivedEvent( 'deviceready' );
 
     //init fastclick (avoids )
@@ -83,17 +85,15 @@ app.initialize();
 
 function console_log( msg )
 {
-  var element = document.getElementById( 'con' );
-
-  element.innerHTML = element.innerHTML + " | " + msg;
-
+  //var element = document.getElementById( 'con' );
+  //element.innerHTML = element.innerHTML + " | " + msg;
 }
 
 function doIt()
 {
   try
   {
-    //alert( app.connType );
+    window.alert( window.device.version );
   }
   catch ( e )
   {
