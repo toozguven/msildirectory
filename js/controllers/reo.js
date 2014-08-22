@@ -1,14 +1,20 @@
-﻿ngapp.controller( 'ReosCtrl', function ( $scope, factory, dataMgr, $anchorScroll, $location )
+﻿ngapp.controller( 'ReosCtrl', function ( $scope, factory, dataMgr, $anchorScroll, $location, $timeout )
 {
   $scope.helpers = factory.getHelpers();
   
   $scope.reos = []; //set as empty array
   
   dataMgr.setScopeREOs( function ( data ) { 
-    $scope.reos = data; 
-    $scope.helpers.showLoading = false;
+    $timeout( function ()
+    {
+      $scope.reos = data;
+      $scope.helpers.showLoading = false;
+    }, $scope.helpers.renderDelay );
+    
   } );
 
+
+  
   $scope.currentlyOpenFirms = "{0}";
 
   $scope.toggleFirm = function (fid)

@@ -10,8 +10,6 @@
   </div>
 </div>
 
-<div class="loading" ng-hide="!(helpers.showLoading)"><i class="fa fa-circle-o-notch fa-spin"></i></div>
-
 <div class="firstContent">
   <div class="pad10">
     <label class="topcoat-radio-button">
@@ -30,14 +28,22 @@
   <input type="search" ng-model="search" class="topcoat-search-input--large" placeholder="Type text to filter the list">
 
   <div ng-repeat="town in towns | filter:searchDelayed | orderBy:'n'" class="topcoat-list">
-    <h2 class="topcoat-list__header town">{{town.n}}</h2>
+    <h2 class="topcoat-list__header town" once-text="town.n"></h2>
     <ul class="topcoat-list__container list firmList">
       <li ng-click="helpers.f(firm.id)" class="topcoat-list__item chevronLi" ng-repeat="firm in firms | filter:searchDelayed | filter:{tid: town.id}:true | orderBy:'id!=763'">
-        <div ng-bind-html="firm.n"></div>
-        <span class="lstSpan">{{firm.l}}</span>
+        <div once-html="firm.n"></div>
+        <span class="lstSpan" once-text="firm.l"></span>
       </li>
     </ul>
   </div>
+
+  <p ng-show="(towns|filter:searchDelayed).length == 0 && helpers.showLoading == false" class="pad10">
+    No result found mathing the search criteria.
+  </p>
+
+  <p ng-show="helpers.showLoading == true" class="pad10 centAlign">
+    <i class="fa fa-circle-o-notch fa-spin"></i> Loading data...
+  </p>
 
 </div>
 

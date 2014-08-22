@@ -10,27 +10,29 @@
   </div>
 </div>
 
-<div class="loading" ng-hide="!(helpers.showLoading)"><i class="fa fa-circle-o-notch fa-spin"></i></div>
-
-<div class="firstContent">
+<div class="firstContent" extend-height>
 
   <input type="search" ng-model="search" class="topcoat-search-input--large" placeholder="Type text to filter results">
+  
+  <div class="prevNextBtnDiv" ng-show="(contacts | filter:searchDelayedFunc).length > helpers.paging.pageSize" mstph-paginate mstph-paginate-total-item-count="{{(contacts | filter:searchDelayedFunc).length}}" mstph-paginate-page-size="{{helpers.paging.pageSize}}"></div>
 
-  <ul class="topcoat-list__container list firmList" ng-show="(contacts|filter:searchDelayed).length > 0 && (contacts|filter:searchDelayed).length < 101">
-    <li ng-click="helpers.c(contact.id)" class="topcoat-list__item chevronLi" ng-repeat="contact in contacts | filter:searchDelayed | orderBy:'ln'">
-      <div ng-bind-html="contact.n"></div>
-      <span ng-show="helpers.hasValue(contact.r)">{{contact.r}}<br /></span>
-      <span ng-bind-html="contact.f"></span>
-      <span>{{contact.l}}</span>
-    </li>
-  </ul>
+  <div>
+    <ul class="topcoat-list__container list firmList" ng-show="(contacts | filter:searchDelayedFunc).length > 0">
+      <li ng-repeat="contact in contacts | filter:searchDelayedFunc | orderBy:'ln' | startFrom: helpers.paging.startFrom | limitTo: helpers.paging.pageSize" ng-click="helpers.c(contact.id)" class="topcoat-list__item chevronLi">
+        <div once-html="contact.n"></div>
+        <div once-show="helpers.hasValue(contact.r)" once-html="contact.r + '<br/>'"></div><br />
+        <span once-html="contact.f" class="bold"></span>
+        <span once-text="contact.l"></span>
+      </li>
+    </ul>
+  </div>
 
-  <p ng-show="(contacts|filter:searchDelayed).length == 0" class="pad10">
+  <p ng-show="(contacts|filter:searchDelayedFunc).length == 0 && helpers.showLoading == false" class="pad10">
     No result found mathing the search criteria.
   </p>
 
-  <p ng-show="((contacts|filter:searchDelayed).length > 100)" class="pad10">
-    Search phrase <strong><em>{{searchDelayed}}</em></strong> matches too many items. Please be more specific.
+  <p ng-show="helpers.showLoading == true" class="pad10 centAlign">
+    <i class="fa fa-circle-o-notch fa-spin"></i> Loading data...
   </p>
 
 </div>

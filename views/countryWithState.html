@@ -10,8 +10,6 @@
   </div>
 </div>
 
-<div class="loading" ng-hide="!(helpers.showLoading)"><i class="fa fa-circle-o-notch fa-spin"></i></div>
-
 <div class="firstContent">
   <div class="topcoat-tab-bar centAlign" style="margin:auto; padding-top: 10px;">
     <select id="ddlState" ng-options="state.id as state.n for state in country.states" ng-model="selectedStateId" ng-change="redirectToState()">
@@ -35,13 +33,21 @@
   <input type="search" ng-model="search" class="topcoat-search-input--large" placeholder="Type text to filter the content">
 
   <div ng-repeat="town in towns | filter:searchDelayed | filter:{sid: state.id}:true | orderBy:'n'" class="topcoat-list">
-      <h2 class="topcoat-list__header town">{{town.n}}</h2>
-      <ul id="town{{town.id}}" class="topcoat-list__container list firmList">
+      <h2 class="topcoat-list__header town" once-text="town.n"></h2>
+      <ul class="topcoat-list__container list firmList">
         <li ng-click="helpers.f(firm.id)" class="topcoat-list__item chevronLi" ng-repeat="firm in firms | filter:searchDelayed | filter:{tid: town.id}:true | orderBy:'n'">
-          <div>{{firm.n}}</div>
+          <div once-html="firm.n"></div>
         </li>
       </ul>
   </div>
+
+  <p ng-show="(towns|filter:searchDelayed | filter:{sid: state.id}:true).length == 0 && helpers.showLoading == false" class="pad10">
+    No result found mathing the search criteria.
+  </p>
+
+  <p ng-show="helpers.showLoading == true" class="pad10 centAlign">
+    <i class="fa fa-circle-o-notch fa-spin"></i> Loading data...
+  </p>
 
 </div>
 

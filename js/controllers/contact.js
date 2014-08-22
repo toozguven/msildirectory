@@ -1,12 +1,16 @@
-﻿ngapp.controller( 'ContactCtrl', function ( $scope, factory, dataMgr, $routeParams, $anchorScroll )
+﻿ngapp.controller( 'ContactCtrl', function ( $scope, factory, dataMgr, $routeParams, $anchorScroll, $timeout )
 {
   $scope.helpers = factory.getHelpers();
 
   dataMgr.setScopeContacts( function ( data )
   {
-    $scope.contact = dataMgr.getContact( data, $routeParams.id );
+    $timeout( function ()
+    {
+      $scope.contact = dataMgr.getContact( data, $routeParams.id );
+      $scope.helpers.showLoading = false;
 
-    $scope.helpers.showLoading = false;
+    }, $scope.helpers.renderDelay );
+
   } );
   
   $anchorScroll();

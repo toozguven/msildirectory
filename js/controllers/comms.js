@@ -1,13 +1,20 @@
-﻿ngapp.controller( 'CommsCtrl', function ( $scope, factory, dataMgr, $anchorScroll, $location )
+﻿ngapp.controller( 'CommsCtrl', function ( $scope, factory, dataMgr, $anchorScroll, $location, $timeout )
 {
   $scope.helpers = factory.getHelpers();
 
   $scope.comms = []; //set as empty array
 
   dataMgr.setScopeComms( function ( data ) { 
-    $scope.comms = data; 
-    $scope.helpers.showLoading = false;
+    $timeout( function ()
+    {
+      $scope.comms = data;
+      $scope.helpers.showLoading = false;
+
+    }, $scope.helpers.renderDelay );
+    
   } );
+
+
 
   $scope.currentlyOpenComms = "{0}";
 

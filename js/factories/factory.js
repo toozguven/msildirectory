@@ -41,7 +41,7 @@
       },
       f: function ( fid ) { $location.path( "/f/" + fid ); },
       c: function ( cid ) { $location.path( "/c/" + cid ); },
-      g: function ( path ) { $location.path( path ); },
+      g: function ( path ) { this.showLoading = true; $location.path( path ); },
       rootScope: ngRootScope,
       isOnline: function ()
       {
@@ -52,6 +52,12 @@
         return ngRootScope.isPhone;
       },
       showLoading: true,
+      renderDelay: 111,
+      paging: { 
+        pageSize: 10, 
+        currentPage: 0, 
+        startFrom: ( this.currentPage * this.pageSize )
+      },
       getCountryName: function ( cname )
       {
         if ( cname == "Former Yugoslav Republic of Macedonia" )
@@ -88,9 +94,19 @@
             timeout.cancel( searchTimeoutFunc );
 
           tempDelayed = val;
-          searchTimeoutFunc = timeout( function ()
+
+          searchTimeoutFunc = timeout( function () //delay run this func
           {
             callback(tempDelayed);
+
+            try {
+              //reset and redraw paging if any
+              scope.helpers.paging.startFrom = 0;
+              scope.helpers.paging.currentPage = 0;
+              scope.mstphPaginate.draw();
+              scope.$apply();
+            } catch ( ex ) { }
+
           }, 555 );
         } );
       }
