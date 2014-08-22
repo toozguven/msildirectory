@@ -10,15 +10,15 @@
   </div>
 </div>
 
+<div class="loading" ng-hide="!(helpers.showLoading)"><i class="fa fa-circle-o-notch fa-spin"></i></div>
+
 <div class="firstContent">
 
   <input type="search" ng-model="search" class="topcoat-search-input--large" placeholder="Type text to filter results">
 
-  <div class="prevNextBtnDiv" ng-show="(firms | filter:searchDelayed).length > helpers.paging.pageSize" mstph-paginate mstph-paginate-total-item-count="{{(firms | filter:searchDelayed).length}}" mstph-paginate-page-size="{{helpers.paging.pageSize}}"></div>
-
-  <ul class="topcoat-list__container list firmList" ng-show="(firms|filter:searchDelayed).length > 0">
-    <li ng-click="helpers.f(firm.id)" class="topcoat-list__item chevronLi" ng-repeat="firm in firms | filter:(searchDelayed) | orderBy:'n' | startFrom: helpers.paging.startFrom | limitTo: helpers.paging.pageSize">
-      <div ng-bind-html="firm.n"></div><br />
+  <ul class="topcoat-list__container list firmList" ng-show="(firms|filter:searchDelayed).length > 0 && (firms|filter:searchDelayed).length < 101">
+    <li ng-click="helpers.f(firm.id)" class="topcoat-list__item chevronLi" ng-repeat="firm in firms | filter:(searchDelayed) | orderBy:'n'">
+      <div ng-bind-html="firm.n"></div>
       <span>{{firm.l}}</span>
     </li>
   </ul>
@@ -27,8 +27,8 @@
     No result found mathing the search criteria.
   </p>
 
-  <p ng-show="helpers.showLoading == true" class="pad10 centAlign">
-    <i class="fa fa-circle-o-notch fa-spin"></i> Loading data...
+  <p ng-show="((firms|filter:searchDelayed).length > 100)" class="pad10">
+    Search phrase <strong><em>{{searchDelayed}}</em></strong> matches too many items. Please be more specific.
   </p>
 
 </div>

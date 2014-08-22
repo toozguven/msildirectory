@@ -165,9 +165,9 @@
 .topcoat-button--large--cta,
 .topcoat-button-bar__button,
 .topcoat-button-bar__button--large {
-  padding: 0 0.75rem;
+  padding: 0 1.25rem;
   font-size: 16px;
-  line-height: 2rem;
+  line-height: 3rem;
   letter-spacing: 1px;
   color: #454545;
   text-shadow: 0 1px #fff;
@@ -254,7 +254,7 @@
 .topcoat-button--cta,
 .topcoat-button--large--cta {
   border: 1px solid #134f7f;
-  background-color: #00AEEF;
+  background-color: #288edf;
   box-shadow: inset 0 1px rgba(255,255,255,0.36);
   color: #fff;
   font-weight: 500;
@@ -589,9 +589,9 @@
 .topcoat-button--large--quiet,
 .topcoat-button--cta,
 .topcoat-button--large--cta {
-  padding: 0 0.55rem;
-  font-size: 15px;
-  line-height: 2rem;
+  padding: 0 1.25rem;
+  font-size: 16px;
+  line-height: 3rem;
   letter-spacing: 1px;
   color: #454545;
   text-shadow: 0 1px #fff;
@@ -747,7 +747,7 @@
 .topcoat-button--cta,
 .topcoat-button--large--cta {
   border: 1px solid #134f7f;
-  background-color: #00AEEF;
+  background-color: #288edf;
   box-shadow: inset 0 1px rgba(255,255,255,0.36);
   color: #fff;
   font-weight: 500;
@@ -1566,23 +1566,22 @@ input[type="checkbox"]:disabled:active + .topcoat-checkbox__checkmark:before {
 .topcoat-list {
   border-top: 1px solid #9daca9;
   border-bottom: 1px solid #fff;
-  background-color: #FCFCFC;
+  background-color: #e5e9e8;
 }
 
 .topcoat-list__header {
-  padding: 4px 4px;
-  padding-left: 20px;
+  padding: 4px 20px;
   font-size: 0.9em;
   font-weight: 400;
   background-color: #d2d6d6;
   color: #454545;
-  --text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+  text-shadow: 0 1px 0 rgba(255,255,255,0.5);
   border-top: 1px solid rgba(255,255,255,0.5);
   border-bottom: 1px solid rgba(255,255,255,0.23);
 }
 
 .topcoat-list__container {
-  --border-top: 1px solid #9daca9;
+  border-top: 1px solid #9daca9;
   color: #454545;
 }
 
@@ -1590,10 +1589,6 @@ input[type="checkbox"]:disabled:active + .topcoat-checkbox__checkmark:before {
   padding: 1.25rem;
   border-top: 1px solid #fff;
   border-bottom: 1px solid #9daca9;
-}
-
-.topcoat-list__item:nth-child(even) {
-  --background: #fafafa;
 }
 
 .topcoat-list__item:first-child {
@@ -1790,13 +1785,9 @@ input[type="checkbox"]:disabled:active + .topcoat-checkbox__checkmark:before {
   height: 4.375rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  background: #666;
-  color: #fff !important;
+  background: #e5e9e8;
+  color: #454545;
   box-shadow: inset 0 -1px #9daca9, 0 1px #d6dcdb;
-}
-
-.topcoat-navigation-bar h4 {
-  color: #fff;
 }
 
 .topcoat-navigation-bar__item {
@@ -2229,7 +2220,7 @@ input[type="radio"]:checked + .topcoat-radio-button__checkmark:after {
   opacity: 0;
   width: 0.875rem;
   height: 0.875rem;
-  background:#00AEEF;
+  background: #454545;
   border: 1px solid rgba(0,0,0,0.1);
   box-shadow: 0 1px rgba(255,255,255,0.5);
   -webkit-transform: none;
@@ -2553,8 +2544,7 @@ input[type="search"]::-webkit-search-cancel-button {
 .search-input,
 .topcoat-search-input,
 .topcoat-search-input--large {
-  padding: 10px;
-  width: 95%;
+  padding: 0;
   margin: 0;
   font: inherit;
   color: inherit;
@@ -2600,6 +2590,8 @@ input[type="search"]::-webkit-search-cancel-button {
 
 .topcoat-search-input,
 .topcoat-search-input--large {
+  line-height: 3rem;
+  height: 3rem;
   font-size: 16px;
   border: 1px solid #9daca9;
   background-color: #fff;
@@ -2665,10 +2657,11 @@ input[type="search"]::-webkit-search-cancel-button {
 */
 
 .topcoat-search-input--large {
-  font-size: 1.1rem;
+  line-height: 4.375rem;
+  height: 4.375rem;
+  font-size: 1.3rem;
   font-weight: 400;
-  padding: 0.5rem;
-  margin: 0.5rem;
+  padding: 0 0 0 2.9rem;
   border-radius: 40px;
   background-position: 1.2rem center;
   background-size: 1.3rem;
@@ -3066,7 +3059,6 @@ input[type="search"]::-webkit-search-cancel-button {
   display: table-cell;
   width: auto;
   border-radius: 0;
-  text-align: center;
 }
 
 .button-bar__item > input,
@@ -3551,10 +3543,9 @@ input[type="search"]::-webkit-search-cancel-button {
 body {
   margin: 0;
   padding: 0;
-  --background: #dfe2e2;
-  background: #FCFCFC;
-  color: #555;
-  font: 16px "Tahoma", Verdana, arial, sans-serif;
+  background: #dfe2e2;
+  color: #000;
+  font: 16px "Source Sans", helvetica, arial, sans-serif;
   font-weight: 400;
 }
 

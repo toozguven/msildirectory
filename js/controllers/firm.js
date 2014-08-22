@@ -1,17 +1,12 @@
-﻿ngapp.controller( 'FirmCtrl', function ( $scope, factory, dataMgr, $routeParams, $anchorScroll, $timeout )
+﻿ngapp.controller( 'FirmCtrl', function ( $scope, factory, dataMgr, $routeParams, $anchorScroll )
 {
   $scope.helpers = factory.getHelpers();
-  $scope.firm = {};
 
   dataMgr.setScopeFirms( function ( data )
   {
-    $timeout( function ()
-    {
-      $scope.firm = dataMgr.getFirm( data, $routeParams.id );
-      $scope.helpers.showLoading = false;
+    $scope.firm = dataMgr.getFirm( data, $routeParams.id );
 
-    }, $scope.helpers.renderDelay );
-    
+    $scope.helpers.showLoading = false;
   } );
 
   $anchorScroll();

@@ -1,4 +1,5 @@
 ﻿&nbsp;
+<div class="loading" ng-hide="!(helpers.showLoading)"><i class="fa fa-circle-o-notch fa-spin"></i></div>
 
  <div class="details">
     
@@ -22,7 +23,7 @@
   <ul class="topcoat-list__container list">
 
     <li class="topcoat-list__item" ng-show="helpers.hasValueFunc(firm.ad)">
-      <span ng-bind-html="firm.ad"></span>     
+      <p ng-bind-html="firm.ad"></p>     
     </li>
 
     <li class="topcoat-list__item" ng-show="helpers.hasValueFunc(firm.mad)">
@@ -34,11 +35,7 @@
 
     <li class="topcoat-list__item" ng-show="helpers.hasValueFunc(firm.f)">
       <div>Facsimile</div>
-      <span>{{firm.f}}</span>      
-    </li>
-
-    <li class="topcoat-list__item" ng-show="helpers.hasValueFunc(firm.cm)">
-      <span ng-bind-html="firm.cm"></span>      
+      <p>{{firm.f}}</p>      
     </li>
 
   </ul>

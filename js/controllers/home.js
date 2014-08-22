@@ -1,4 +1,4 @@
-﻿ngapp.controller( 'HomeCtrl', function ( $scope, factory, dataMgr, $anchorScroll, $location, $timeout )
+﻿ngapp.controller( 'HomeCtrl', function ( $scope, factory, dataMgr, $anchorScroll, $location )
 {
   //set global var so we can call it from setTimeout
   globalDataMgr = dataMgr;
@@ -21,10 +21,10 @@
 
 
   //async load other data
-  $timeout( function () { globalDataMgr.setScopeFirms( function ( data ) { } ); }, 1 );
-  $timeout( function () { globalDataMgr.setScopeContacts( function ( data ) { } );}, 11 );
-  $timeout( function () { globalDataMgr.setScopeComms( function ( data ) { } );}, 22 );
-  $timeout( function () { globalDataMgr.setScopeREOs( function ( data ) { } ); }, 33 );
+  setTimeout( "globalDataMgr.setScopeFirms( function ( data ) { } );", 1 );
+  setTimeout( "globalDataMgr.setScopeContacts( function ( data ) { } );", 11 );
+  setTimeout( "globalDataMgr.setScopeComms( function ( data ) { } );", 22 );
+  setTimeout( "globalDataMgr.setScopeREOs( function ( data ) { } );", 33 );
 
   
   $scope.selectedCountryId = 0;
@@ -64,6 +64,7 @@
         alert( "Search term must be at least 3 characters." );
       else
       {
+        $scope.helpers.showLoading = true;
         $location.path( "/findFirms/" + phrase );
       }
     }

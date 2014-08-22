@@ -5,34 +5,34 @@
   var ALWAYS_USE_WEB = false;
 
   var REO_API_URL = "https://s3-eu-west-1.amazonaws.com/msil-international-directory/reos.json";
-  var REO_LOCAL_STORAGE_KEY = "mstphDirREOs3";
+  var REO_LOCAL_STORAGE_KEY = "mstphDirREOs";
 
   var COMMS_API_URL = "https://s3-eu-west-1.amazonaws.com/msil-international-directory/committees.json";
-  var COMMS_LOCAL_STORAGE_KEY = "mstphDirComms3";
+  var COMMS_LOCAL_STORAGE_KEY = "mstphDirComms";
 
   var COUNTRIES_API_URL = "https://s3-eu-west-1.amazonaws.com/msil-international-directory/countries.json";
-  var COUNTRIES_LOCAL_STORAGE_KEY = "mstphDirCountries3";
+  var COUNTRIES_LOCAL_STORAGE_KEY = "mstphDirCountries";
 
   var FIRMS_API_URL = "https://s3-eu-west-1.amazonaws.com/msil-international-directory/firms.json";
-  var FIRMS_LOCAL_STORAGE_KEY = "mstphDirFirms3";
+  var FIRMS_LOCAL_STORAGE_KEY = "mstphDirFirms";
 
   var CONTACTS_API_URL = "https://s3-eu-west-1.amazonaws.com/msil-international-directory/contacts.json";
-  var CONTACTS_LOCAL_STORAGE_KEY = "mstphDirContacts3";
+  var CONTACTS_LOCAL_STORAGE_KEY = "mstphDirContacts";
 
   if ( document.location.href.indexOf( "cdn.moorestephens.org" ) > -1 )
   {
-    REO_API_URL = "https://cdn.moorestephens.org/InternationalDirectory/json/reos.json";
-    COMMS_API_URL = "https://cdn.moorestephens.org/InternationalDirectory/json/committees.json";
-    COUNTRIES_API_URL = "https://cdn.moorestephens.org/InternationalDirectory/json/countries.json";
-    FIRMS_API_URL = "https://cdn.moorestephens.org/InternationalDirectory/json/firms.json";
-    CONTACTS_API_URL = "https://cdn.moorestephens.org/InternationalDirectory/json/contacts.json";
+    REO_API_URL = "https://cdn.moorestephens.org/InternationalDirectory/api/reos";
+    COMMS_API_URL = "https://cdn.moorestephens.org/InternationalDirectory/api/committees";
+    COUNTRIES_API_URL = "https://cdn.moorestephens.org/InternationalDirectory/api/countries";
+    FIRMS_API_URL = "https://cdn.moorestephens.org/InternationalDirectory/api/firms";
+    CONTACTS_API_URL = "https://cdn.moorestephens.org/InternationalDirectory/api/contacts";
   }
 
-  localStorage.removeItem( REO_LOCAL_STORAGE_KEY );
-  localStorage.removeItem( COMMS_LOCAL_STORAGE_KEY );
-  localStorage.removeItem( COUNTRIES_LOCAL_STORAGE_KEY );
-  localStorage.removeItem( FIRMS_LOCAL_STORAGE_KEY );
-  localStorage.removeItem( CONTACTS_LOCAL_STORAGE_KEY );
+  //localStorage.removeItem( REO_LOCAL_STORAGE_KEY );
+  //localStorage.removeItem( COMMS_LOCAL_STORAGE_KEY );
+  //localStorage.removeItem( COUNTRIES_LOCAL_STORAGE_KEY );
+  //localStorage.removeItem( FIRMS_LOCAL_STORAGE_KEY );
+  //localStorage.removeItem( CONTACTS_LOCAL_STORAGE_KEY );
 
   var factory = {};
 
@@ -77,18 +77,6 @@
     return $http.get( url );
   };
 
-  factory.filterByField = function ( arr, fieldName, fieldValue )
-  {
-    var rtnVal = [];
-
-    for ( var i = 0; i < arr.length; i++)
-    {
-      if ( arr[i][fieldName] == fieldValue )
-        rtnVal.push( arr[i] );
-    }
-
-    return rtnVal;
-  }
 
 
   /*#region REOs*/
